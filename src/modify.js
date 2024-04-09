@@ -1,14 +1,12 @@
-const uppercaseAll = (word1, word2, word3) => {
-  return [
-    word1.toUpperCase(),
-    word2.toUpperCase(),
-    word3.toUpperCase(),
-  ];
+const uppercaseAll = (...words) => {
+  for(let word of words) {
+    words.splice(words.indexOf(word), 1, word.toUpperCase());
+  }
+  return words;
 };
 
 const destructureCoordinates = (coordinates) => {
-  const x = coordinates[0];
-  const y = coordinates[1];
+  const [x, y] = coordinates;
   return `X is: ${x}, Y is: ${y}`; // no touching this line!
 };
 
